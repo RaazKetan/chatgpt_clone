@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SideBar from "./components/SideBar";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ChatGpt",
@@ -16,8 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <div className="flex">
+          <SideBar/>
           {/* {Sidebar} */}
           {/* client provider-Notification */}
      <div className=" bg-[#343541] flex-1 ">
