@@ -18,7 +18,7 @@ function HomePage() {
           <div className=" space-y-2">
             <p className="infoText">Explain Something to me</p>
             <p className="infoText ">
-              "What is the difference between a crocodile and an alligator?"
+              "What is the difference between a crocodile and an alligator?" 
             </p>
             <p className="infoText">What is the color of the sun</p>
           </div>
