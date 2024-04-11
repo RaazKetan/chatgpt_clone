@@ -1,5 +1,11 @@
+'use client';
+import { useSession } from "next-auth/react";
 import NewChat from "./NewChat";
+// import { Image } from "next/image";
+
 function SideBar() {
+  const {data:session} = useSession();
+  // console.log(session);
   return (
     <div className="p-2 flex flex-col h-screen">
         <div className="flex-1">
@@ -13,6 +19,9 @@ function SideBar() {
 
             </div>
         </div>
+        {session && (
+          <img src={session.user.image} alt="Profile Picture" className="rounded-full h-12 w-12 cursor-pointer mx-auto mb-2 hover:opacity-50"/>
+        )}
     </div>
   );
 }
