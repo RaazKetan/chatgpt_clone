@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../../../firebase";
-import { collection, orderBy, query } from "firebase/firestore";
+import { collection, deleteDoc, doc, orderBy, query } from "firebase/firestore";
 type Props = {
   id:string; 
 }
@@ -17,10 +17,7 @@ function ChatRow({id}:Props) {
   const {data:session} = useSession();
   const [active, setActive] = useState(false);
   const [messages] = useCollection(
-    query(
     collection(db, 'users', session?.user?.email!, 'chats', id, 'messages'),
-    orderBy('createdAt','asc')
-  )
 );
 
 useEffect(()=>{
@@ -29,6 +26,12 @@ useEffect(()=>{
 
   setActive(pathname.includes(id));
 },[pathname]);
+
+const removeChat = async()=>{
+  await deleteDoc(
+    doc(db, 'users', session?.user?.email!, 'chats', id));
+    router.replace("/");
+}
 
   return (
     <Link
@@ -41,7 +44,9 @@ useEffect(()=>{
       >
       {messages?.docs[messages?.docs.length - 1]?.data().text || "New Chat"}
       </p>
-      <TrashIcon className="h-5 w-5 text-gray-700 hover:text-red-600"/>
+      <TrashIcon
+      onClick={removeChat}
+      className="h-5 w-5 text-gray-700 hover:text-red-600"/>
     </Link>
   )
 }
