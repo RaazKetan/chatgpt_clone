@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../../firebase";
 
+
 function NewChat(){
     const router = useRouter();
     const {data:session} = useSession();
