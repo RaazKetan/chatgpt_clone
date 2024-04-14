@@ -17,7 +17,7 @@ function SideBar() {
       )
   );
 
-  console.log(chats);
+  // console.log(chats);
   return (
     <div className="p-2 flex flex-col h-screen">
       <div className="flex-1">
@@ -32,6 +32,7 @@ function SideBar() {
         </div>
       </div>
       {session && (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={session.user.image}
           alt="Profile Picture"

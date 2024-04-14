@@ -15,10 +15,11 @@ function ChatInput({ chatId }: Props) {
   const { data: session } = useSession();
 
   //useSwr to get model
-  const model = "davinci";
+  const model = "gpt-3.5-turbo";
 
   const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!prompt) return;
 
     const input = prompt.trim();
@@ -62,9 +63,8 @@ function ChatInput({ chatId }: Props) {
         session,
       }),
     }).then(() => {
-      toast.success("Chat Gpt has replied", {
-         id: notification 
-        
+      toast.success("Chat Gpt has replied!", {
+         id: notification ,
         });
     });
   };
