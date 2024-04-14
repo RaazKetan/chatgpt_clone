@@ -29,7 +29,7 @@ function Chat({chatId}:Props) {
     <div className="flex-1 overflow-y-auto overflow-x-hidden" >
       {message?.empty &&
       <>
-      <p className="mt-10 text-center text-white">Type a prompt in below to get started</p>
+      <p className="mt-10 text-center text-white">Currently ChatGPT doesnt offer free API so please insert your own api to get the results</p>
       <ArrowDownCircleIcon className="h-10 w-10 mx-auto text-white animate-bounce mt-5" />
       </>
       }
