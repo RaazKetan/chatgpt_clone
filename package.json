@@ -5,12 +5,12 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/eyucoder/chatgpt-clone"
+    "url": "https://github.com/RaazKetan/chatgpt_clone/tree/master"
   },
   "author": {
-    "name": "eyucoder",
-    "email": "eyueldaniel0921@gmail.com",
-    "url": "https://github.com/eyucoder"
+    "name": "Ketan Raj",
+    "email": "21ketanraaz@gmail.com",
+    "url": "https://github.com/RaazKetan"
   },
   "scripts": {
     "dev": "vite",
